@@ -9,13 +9,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{30AEB09C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A8404E96-AFFA-43DA-9534-A691604ED8AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Taxas.Api", "Granito.Taxas.Api\Granito.Taxas.Api.csproj", "{AAD90F13-9811-41F6-BA28-1F6112DABA9B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Granito.Taxas.Api", "Granito.Taxas.Api\Granito.Taxas.Api.csproj", "{AAD90F13-9811-41F6-BA28-1F6112DABA9B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Calculo.Api", "Granito.Calculo.Api\Granito.Calculo.Api.csproj", "{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Granito.Calculo.Api", "Granito.Calculo.Api\Granito.Calculo.Api.csproj", "{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Calculo.Api.Tests", "Granito.Calculo.Api.Tests\Granito.Calculo.Api.Tests.csproj", "{882CB703-A7CB-424A-99F1-A36B43F0884A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Granito.Calculo.Api.Tests", "Granito.Calculo.Api.Tests\Granito.Calculo.Api.Tests.csproj", "{882CB703-A7CB-424A-99F1-A36B43F0884A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Taxas.Api.Tests", "Granito.Taxas.Api.Tests\Granito.Taxas.Api.Tests.csproj", "{055816CF-2813-4191-8018-D1012D8F8785}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Granito.Taxas.Api.Tests", "Granito.Taxas.Api.Tests\Granito.Taxas.Api.Tests.csproj", "{055816CF-2813-4191-8018-D1012D8F8785}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

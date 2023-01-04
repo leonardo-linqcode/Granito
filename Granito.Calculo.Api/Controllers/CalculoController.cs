@@ -9,7 +9,7 @@ namespace Granito.Calculo.Api.Controllers
     [Route("api/")]
     public class CalculoController : ControllerBase
     {
-        [HttpGet("CalcularJuros")]
+        [HttpGet("CalculaJuros")]
         [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(decimal))]
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(ProblemDetails))]
         public async Task<ActionResult<decimal>> CalculaJuros([FromQuery] CalcularJurosCompostoCommand request, ISender sender)
