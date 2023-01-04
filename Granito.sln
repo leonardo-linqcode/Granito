@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33122.133
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{614092DA-96A6-4585-95B7-A376F85E59F7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{A8404E96-AFFA-43DA-9534-A691604ED8AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Taxas.Api", "Granito.Taxas.Api\Granito.Taxas.Api.csproj", "{AAD90F13-9811-41F6-BA28-1F6112DABA9B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Calculo.Api", "Granito.Calculo.Api\Granito.Calculo.Api.csproj", "{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Calculo.Api.Tests", "Granito.Calculo.Api.Tests\Granito.Calculo.Api.Tests.csproj", "{882CB703-A7CB-424A-99F1-A36B43F0884A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Taxas.Api.Tests", "Granito.Taxas.Api.Tests\Granito.Taxas.Api.Tests.csproj", "{055816CF-2813-4191-8018-D1012D8F8785}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AAD90F13-9811-41F6-BA28-1F6112DABA9B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAD90F13-9811-41F6-BA28-1F6112DABA9B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAD90F13-9811-41F6-BA28-1F6112DABA9B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAD90F13-9811-41F6-BA28-1F6112DABA9B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882CB703-A7CB-424A-99F1-A36B43F0884A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882CB703-A7CB-424A-99F1-A36B43F0884A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882CB703-A7CB-424A-99F1-A36B43F0884A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882CB703-A7CB-424A-99F1-A36B43F0884A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055816CF-2813-4191-8018-D1012D8F8785}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055816CF-2813-4191-8018-D1012D8F8785}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055816CF-2813-4191-8018-D1012D8F8785}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055816CF-2813-4191-8018-D1012D8F8785}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{30AEB09C-7F6F-4FFA-A877-0F0B9893EB13} = {614092DA-96A6-4585-95B7-A376F85E59F7}
+		{A8404E96-AFFA-43DA-9534-A691604ED8AF} = {614092DA-96A6-4585-95B7-A376F85E59F7}
+		{AAD90F13-9811-41F6-BA28-1F6112DABA9B} = {A8404E96-AFFA-43DA-9534-A691604ED8AF}
+		{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D} = {A8404E96-AFFA-43DA-9534-A691604ED8AF}
+		{882CB703-A7CB-424A-99F1-A36B43F0884A} = {30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}
+		{055816CF-2813-4191-8018-D1012D8F8785} = {30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0B6E34FD-7687-48CC-AD51-CF92816763DE}
+	EndGlobalSection
+EndGlobal
