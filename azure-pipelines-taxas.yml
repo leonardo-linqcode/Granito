@@ -28,7 +28,7 @@ stages:
         - task: DotNetCoreCLI@2
           inputs:
             command: 'test'
-            projects: '**/Granito.Taxas.Api.csproj'
+            projects: '**/Granito.Taxas.Api.Tests.csproj'
 - stage: Build
   displayName: Build image
   jobs:
