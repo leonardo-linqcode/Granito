@@ -13,14 +13,14 @@ public class RequestProvider : IRequestProvider
         },
             LazyThreadSafetyMode.ExecutionAndPublication);
 
-    public async Task<TResult> GetAsync<TResult>(string uri)
+    public async Task<TResult?> GetAsync<TResult>(string uri)
     {
         HttpClient httpClient = GetOrCreateHttpClient();
         HttpResponseMessage response = await httpClient.GetAsync(uri).ConfigureAwait(false);
 
         await HandleResponse(response).ConfigureAwait(false);
 
-        TResult result = await response.Content.ReadFromJsonAsync<TResult>();
+        TResult? result = await response.Content.ReadFromJsonAsync<TResult>();
 
         return result;
     }

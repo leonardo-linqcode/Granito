@@ -1,6 +1,6 @@
-﻿using Granito.Calculo.Api.Core.Interfaces;
+﻿using FluentValidation;
+using Granito.Calculo.Api.Core.Interfaces;
 using Granito.Calculo.Api.Services.RequestProvider;
-using System.Numerics;
 
 namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers;
 
@@ -8,15 +8,19 @@ public class CalcularJurosCompostoCommandHandler : ICommandHandler<CalcularJuros
 {
     private readonly string _taxaApiUrl;
     private readonly IRequestProvider _requestProvider;
+    private readonly IValidator<CalcularJurosCompostoCommand> _validator;
 
-    public CalcularJurosCompostoCommandHandler(ApiSettings settings, IRequestProvider requestProvider)
+    public CalcularJurosCompostoCommandHandler(ApiSettings settings, IRequestProvider requestProvider, IValidator<CalcularJurosCompostoCommand> validator)
     {
         _taxaApiUrl = settings.TaxaApiUrl;
         _requestProvider = requestProvider;
+        _validator = validator;
     }
 
     public async Task<decimal> Handle(CalcularJurosCompostoCommand request, CancellationToken cancellationToken)
     {
+        await _validator.ValidateAndThrowAsync(request, cancellationToken);
+
         double taxaJuros = Convert.ToDouble(await _requestProvider.GetAsync<decimal>($"{_taxaApiUrl}/api/taxas"));
 
         double valorInicial = Convert.ToDouble(request.ValorInicial);

@@ -8,7 +8,8 @@ namespace Granito.Calculo.Api.Controllers
     [Route("api/")]
     public class TaxasController : ControllerBase
     {
-        [HttpGet(Name = "Taxas")]
+        [HttpGet("Taxas")]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(decimal))]
         public async Task<ActionResult<decimal>> Get(ISender sender)
         {
             var fetchTaxas = new FetchTaxas();

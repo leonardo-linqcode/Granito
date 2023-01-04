@@ -1,5 +1,8 @@
-﻿using Granito.Calculo.Api.Core.Interfaces;
+﻿using FluentValidation;
+using FluentValidation.Results;
+using Granito.Calculo.Api.Core.Interfaces;
 using Granito.Calculo.Api.Services.RequestProvider;
+using Granito.Calculo.Api.Validations;
 using Moq;
 
 namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers.Tests
@@ -12,7 +15,7 @@ namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers.Tests
             // Arrange 
 
             var classType = typeof(CalcularJurosCompostoCommandHandler);
-            var interfaceType = typeof(IQueryHandler<,>);
+            var interfaceType = typeof(ICommandHandler<,>);
 
             // Act
 
@@ -45,7 +48,7 @@ namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers.Tests
         [InlineData(259.37, 100, 10, 0.10)]
         [InlineData(315.17, 100, 11, 0.11)]
         [InlineData(389.59, 100, 12, 0.12)]
-        public async Task HandleTest(decimal esperado, decimal valorInicial, int meses, decimal taxa)
+        public async Task HandleTest_Should_Return_Decimal_Value(decimal esperado, decimal valorInicial, int meses, decimal taxa)
         {
             // Arrange
 
@@ -56,8 +59,10 @@ namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers.Tests
                 .Setup(s => s.GetAsync<decimal>(It.IsAny<string>()))
                 .Returns(Task.FromResult(taxa));
 
+            var validation = new CalcularJurosCompostoCommandValidation();
+
             var command = new CalcularJurosCompostoCommand(valorInicial, meses);
-            var handler = new CalcularJurosCompostoCommandHandler(apiSettings, mockRequestProvider.Object);
+            var handler = new CalcularJurosCompostoCommandHandler(apiSettings, mockRequestProvider.Object, validation);
 
             // Act
 
@@ -65,6 +70,38 @@ namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers.Tests
 
             // Assert
             Assert.Equal(esperado, result);
+        }
+
+
+        [Theory(DisplayName = $"{nameof(CalcularJurosCompostoCommandHandler.Handle)} deve retornar disparar exceção {nameof(ValidationFailure)}.")]
+        [InlineData(0, 0, 0.01)]
+        [InlineData(-1, -1, 0.01)]
+        [InlineData(-2, 0, 0.01)]
+        [InlineData(0, -2, 0.01)]
+        public async Task HandleTest_Should_Throw_Exception_ValidationFailure(decimal valorInicial, int meses, decimal taxa)
+        {
+            // Arrange
+
+            var apiSettings = new ApiSettings { TaxaApiUrl = "https://granito.com.br/api/taxas" };
+
+            var mockRequestProvider = new Mock<IRequestProvider>();
+
+            mockRequestProvider
+                .Setup(s => s.GetAsync<decimal>(It.IsAny<string>()))
+                .Returns(Task.FromResult(taxa));
+
+            var validation = new CalcularJurosCompostoCommandValidation();
+
+            var command = new CalcularJurosCompostoCommand(valorInicial, meses);
+            var handler = new CalcularJurosCompostoCommandHandler(apiSettings, mockRequestProvider.Object, validation);
+
+            // Act
+
+            await Assert.ThrowsAsync<ValidationException>(async () =>
+            {
+                // Assert
+                await handler.Handle(command, CancellationToken.None);
+            });
         }
     }
 }
