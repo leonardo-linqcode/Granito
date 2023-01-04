@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Granito.Calculo.Api.Tests": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
