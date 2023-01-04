@@ -7,7 +7,7 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["Granito.Taxas.Api/Granito.Taxas.Api.csproj", "Granito.Taxas.Api/"]
+COPY ["./Granito.Taxas.Api/Granito.Taxas.Api.csproj", "Granito.Taxas.Api/"]
 RUN dotnet restore "Granito.Taxas.Api/Granito.Taxas.Api.csproj"
 COPY . .
 WORKDIR "/src/Granito.Taxas.Api"
