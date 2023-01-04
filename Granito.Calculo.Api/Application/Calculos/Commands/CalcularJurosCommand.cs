@@ -2,4 +2,4 @@
 
 namespace Granito.Calculo.Api.Application.Calculos.Commands;
 
-public sealed record CalcularJurosCompostoCommand(double ValorInicial, double Meses) : ICommand<decimal>;
+public sealed record CalcularJurosCompostoCommand(decimal ValorInicial, decimal Meses) : ICommand<decimal>;

@@ -1,5 +1,6 @@
 ﻿using Granito.Calculo.Api.Core.Interfaces;
 using Granito.Calculo.Api.Services.RequestProvider;
+using System.Numerics;
 
 namespace Granito.Calculo.Api.Application.Calculos.Commands.Handlers;
 
@@ -24,6 +25,11 @@ public class CalcularJurosCompostoCommandHandler : ICommandHandler<CalcularJuros
 
         decimal resultado = Convert.ToDecimal((valorInicial * Math.Pow(taxa, meses)));
 
-        return decimal.Truncate(resultado);
+        // Truncamento casas decimais, sem arredondamento.
+
+        var divisor = (decimal)Math.Pow(10, -1 * 2);
+        var resultadoTruncado = resultado - (resultado % divisor);
+
+        return resultadoTruncado;
     }
 }
