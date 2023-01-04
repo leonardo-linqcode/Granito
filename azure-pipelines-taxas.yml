@@ -1,0 +1,41 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Test
+  displayName: Test
+  jobs:
+    - job: Test
+      displayName: Test
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+        - task: DotNetCoreCLI@2
+          inputs:
+            command: 'test'
+            projects: '**/Granito.Taxas.Api.csproj'
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'Docker Hub Linqcode'
+          repository: 'granito.taxas.api'
+          command: 'buildAndPush'
+          tags: '$(tag)'
+          Dockerfile: '$(Build.SourcesDirectory)/Granito.Taxas.Api/Dockerfile'
