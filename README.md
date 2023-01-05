@@ -55,6 +55,18 @@ Para rodar o projeto `Granito.Calculo.Api`, você vai precisar adicionar as segu
 
 `TaxasApiUrl`= https://granito-taxas-api.azurewebsites.net/ ou https://localhost
 
+## Estrutura dos projetos
+```bash
+├── src
+│   ├── Tests
+│   │   ├── Granito.Calculo.Api.FunctionalTests (Integration Tests)
+│   │   ├── Granito.Calculo.Api.Tests (Unit Tests)
+│   │   ├── Granito.Taxas.Api.FunctionalTests (Integration Tests)
+│   │   ├── Granito.Taxas.Api.Tests (Unit Tests)
+│   ├── Web
+│   │   ├── Granito.Calculo.Api (Web API)
+│   │   ├── Granito.Taxas.Api (Web Api)
+```
 
 ## Stack utilizada
 
