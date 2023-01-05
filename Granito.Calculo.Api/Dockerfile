@@ -6,12 +6,13 @@ EXPOSE 80
 EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
+
 WORKDIR /src
 
-COPY ["Granito.Calculo.Api.csproj", "Granito.Calculo.Api/"]
-RUN dotnet restore "Granito.Calculo.Api/Granito.Calculo.Api.csproj"
+COPY ["Granito.Calculo.Api.csproj", "app/"]
+RUN dotnet restore "app/Granito.Calculo.Api.csproj"
+WORKDIR "/src/app"
 COPY . .
-WORKDIR "/src/Granito.Calculo.Api"
 RUN dotnet build "Granito.Calculo.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
