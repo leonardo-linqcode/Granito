@@ -34,6 +34,6 @@ public class CalcularJurosCompostoCommandHandler : ICommandHandler<CalcularJuros
         var divisor = (decimal)Math.Pow(10, -1 * 2);
         var resultadoTruncado = resultado - (resultado % divisor);
 
-        return resultadoTruncado;
+        return Math.Round(resultadoTruncado, 2);
     }
 }
