@@ -17,6 +17,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Granito.Calculo.Api.Tests",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Granito.Taxas.Api.Tests", "Granito.Taxas.Api.Tests\Granito.Taxas.Api.Tests.csproj", "{055816CF-2813-4191-8018-D1012D8F8785}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Taxas.Api.FunctionalTests", "Granito.Taxas.Api.FunctionalTests\Granito.Taxas.Api.FunctionalTests.csproj", "{B85CD979-25AC-4B63-A1B4-D4BABE006BB9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Granito.Calculo.Api.FunctionalTests", "Granito.Calculo.Api.FunctionalTests\Granito.Calculo.Api.FunctionalTests.csproj", "{F0B7CE4A-0345-4183-9ECF-C05C921F9508}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{055816CF-2813-4191-8018-D1012D8F8785}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{055816CF-2813-4191-8018-D1012D8F8785}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{055816CF-2813-4191-8018-D1012D8F8785}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B85CD979-25AC-4B63-A1B4-D4BABE006BB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B85CD979-25AC-4B63-A1B4-D4BABE006BB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B85CD979-25AC-4B63-A1B4-D4BABE006BB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B85CD979-25AC-4B63-A1B4-D4BABE006BB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0B7CE4A-0345-4183-9ECF-C05C921F9508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0B7CE4A-0345-4183-9ECF-C05C921F9508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0B7CE4A-0345-4183-9ECF-C05C921F9508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0B7CE4A-0345-4183-9ECF-C05C921F9508}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +62,8 @@ Global
 		{7EAB1719-1BCF-4199-BFF5-87A6B41AE25D} = {A8404E96-AFFA-43DA-9534-A691604ED8AF}
 		{882CB703-A7CB-424A-99F1-A36B43F0884A} = {30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}
 		{055816CF-2813-4191-8018-D1012D8F8785} = {30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}
+		{B85CD979-25AC-4B63-A1B4-D4BABE006BB9} = {30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}
+		{F0B7CE4A-0345-4183-9ECF-C05C921F9508} = {30AEB09C-7F6F-4FFA-A877-0F0B9893EB13}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0B6E34FD-7687-48CC-AD51-CF92816763DE}
