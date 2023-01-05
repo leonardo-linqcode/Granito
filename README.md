@@ -8,6 +8,8 @@ Projeto de avaliação técnica para vaga de Desenvolvedor Back-end na Granito.
 ## Documentação da API de Cálculo
 https://granito-calculo-api.azurewebsites.net
 
+[![Build Status](https://dev.azure.com/linqcode/Schedule%20App/_apis/build/status/leonardo-linqcode.Granito.Calculo?branchName=master)](https://dev.azure.com/linqcode/Schedule%20App/_build/latest?definitionId=3&branchName=master)
+
 #### Retorna valor com juros aplicado
 
 ```http
@@ -28,6 +30,8 @@ https://granito-calculo-api.azurewebsites.net
 ## Documentação da API de Taxas
 https://granito-taxas-api.azurewebsites.net
 
+[![Build Status](https://dev.azure.com/linqcode/Schedule%20App/_apis/build/status/leonardo-linqcode.Granito.Taxas?branchName=master)](https://dev.azure.com/linqcode/Schedule%20App/_build/latest?definitionId=2&branchName=master)
+
 #### Retorna a taxa atual de juros
 
 ```http
@@ -40,6 +44,9 @@ Para rodar o projeto `Granito.Calculo.Api`, você vai precisar adicionar as segu
 `TaxasApiUrl`= https://granito-taxas-api.azurewebsites.net/ ou https://localhost
 
 
+## Stack utilizada
+
+**Back-end:** .Net 7.0, c#, xUnit, FluentValidation, MediatR
 ## Autores
 
 - [@leonardosilva](https://www.github.com/leonardo-linqcode)
