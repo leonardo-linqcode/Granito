@@ -7,7 +7,8 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 WORKDIR /src
-COPY ["./Granito.Calculo.Api.csproj", "Granito.Calculo.Api/"]
+
+COPY ["Granito.Calculo.Api.csproj", "Granito.Calculo.Api/"]
 RUN dotnet restore "Granito.Calculo.Api/Granito.Calculo.Api.csproj"
 COPY . .
 WORKDIR "/src/Granito.Calculo.Api"
