@@ -50,3 +50,14 @@ stages:
           command: 'buildAndPush'
           tags: '$(tag)'
           Dockerfile: '$(Build.SourcesDirectory)/Granito.Taxas.Api/Dockerfile'
+- stage: Deploy
+  displayName: Deploy
+  jobs:
+    - job: Deploy
+      displayName: Deploy
+      steps:
+        - task: AzureWebAppContainer@1
+          inputs:
+            azureSubscription: 'Pago pelo Uso (72882a23-c44f-4837-b399-27e7d75f6e5b)'
+            appName: 'granito-taxas-api'
+            containers: 'linqcode/granito.taxas.api:$(tag)'
