@@ -7,11 +7,11 @@
     <UserSecretsId>c6b5c6c3-0306-4c8f-b12a-43d7d6514cd4</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
+    <OutputType>Exe</OutputType>
   </PropertyGroup>
 
   <ItemGroup>
-	<InternalsVisibleTo Include="Granito.Taxas.Api.FunctionalTests"/>
-	<InternalsVisibleTo Include="Granito.Calculo.Api.FunctionalTests"/>
+	<InternalsVisibleTo Include="Granito.Taxas.Api.FunctionalTests" />
     <PackageReference Include="MediatR" Version="11.1.0" />
     <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.0" />
