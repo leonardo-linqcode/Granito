@@ -46,7 +46,7 @@ stages:
       - task: Docker@2
         inputs:
           containerRegistry: 'Docker Hub Linqcode'
-          repository: 'granito.taxas.api'
+          repository: 'linqcode/granito.taxas.api'
           command: 'buildAndPush'
           tags: '$(tag)'
           Dockerfile: '$(Build.SourcesDirectory)/Granito.Taxas.Api/Dockerfile'
