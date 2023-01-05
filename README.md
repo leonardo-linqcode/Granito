@@ -1,5 +1,5 @@
 
-# Cálculo de juros composto
+# Cálculo de juros compostos
 
 Projeto de avaliação técnica para vaga de Desenvolvedor Back-end na Granito.
 ```
@@ -33,7 +33,7 @@ https://granito-calculo-api.azurewebsites.net
 | `valorinicial` | `decimal` | **Obrigatório**. Valor base para cálculo. |
 | `meses` | `int` | **Obrigatório**. Quantidade de meses para cálculo de juros. |
 
-#### Retorna link do projeto no GitHub
+#### Retorna o link do projeto no GitHub
 
 ```http
   GET api/showmethecode
