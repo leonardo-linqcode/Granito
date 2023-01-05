@@ -1,8 +1,20 @@
 
-# Cálculo de juros compostos
+# Cálculo de juros composto
 
 Projeto de avaliação técnica para vaga de Desenvolvedor Back-end na Granito.
+```
+Projeto hospedado no Azure Cloud, serviços baseados em container docker.
 
+Imagens docker podem ser encontradas aqui:
+https://hub.docker.com/repository/docker/linqcode/granito.calculo.api
+https://hub.docker.com/repository/docker/linqcode/granito.taxas.api
+
+````
+
+
+
+
+![App Screenshot](https://live.staticflickr.com/65535/52608330613_20fd59012e_c.jpg)
 
 
 ## Documentação da API de Cálculo
@@ -21,7 +33,7 @@ https://granito-calculo-api.azurewebsites.net
 | `valorinicial` | `decimal` | **Obrigatório**. Valor base para cálculo. |
 | `meses` | `int` | **Obrigatório**. Quantidade de meses para cálculo de juros. |
 
-#### Retorna o link do projeto no GitHub
+#### Retorna link do projeto no GitHub
 
 ```http
   GET api/showmethecode
@@ -46,7 +58,7 @@ Para rodar o projeto `Granito.Calculo.Api`, você vai precisar adicionar as segu
 
 ## Stack utilizada
 
-**Back-end:** .Net 7.0, c#, xUnit, FluentValidation, MediatR, Docker, CQRS Pattern
+**Back-end:** .Net 7.0, c#, xUnit, FluentValidation, MediatR
 ## Autores
 
 - [@leonardosilva](https://www.github.com/leonardo-linqcode)
