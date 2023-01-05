@@ -1,0 +1,63 @@
+# Docker
+# Build a Docker image
+# https://docs.microsoft.com/azure/devops/pipelines/languages/docker
+
+trigger:
+- master
+
+resources:
+- repo: self
+
+variables:
+  tag: '$(Build.BuildId)'
+
+stages:
+- stage: Test
+  displayName: Test
+  jobs:
+    - job: Test
+      displayName: Test
+      pool:
+        vmImage: ubuntu-latest
+      steps:
+        - task: UseDotNet@2
+          displayName: Use .NET 7.x
+          inputs:
+            packageType: 'sdk'
+            version: '7.x'
+        - task: DotNetCoreCLI@2
+          displayName: 'Unit Tests'
+          inputs:
+            command: 'test'
+            projects: '**/Granito.Calculo.Api.Tests.csproj'
+        - task: DotNetCoreCLI@2
+          displayName: 'Integration Tests'
+          inputs:
+            command: 'test'
+            projects: '**/Granito.Calculo.Api.FunctionalTests.csproj'
+- stage: Build
+  displayName: Build image
+  jobs:
+  - job: Build
+    displayName: Build
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - task: Docker@2
+        inputs:
+          containerRegistry: 'Docker Hub Linqcode'
+          repository: 'linqcode/granito.calculo.api'
+          command: 'buildAndPush'
+          tags: '$(tag)'
+          Dockerfile: '$(Build.SourcesDirectory)/Granito.Calculo.Api/Dockerfile'
+- stage: Deploy
+  displayName: Deploy
+  jobs:
+    - job: Deploy
+      displayName: Deploy
+      steps:
+        - task: AzureWebAppContainer@1
+          inputs:
+            azureSubscription: 'Pago pelo Uso (72882a23-c44f-4837-b399-27e7d75f6e5b)'
+            appName: 'granito-calculo-api'
+            containers: 'linqcode/granito.calculo.api:$(tag)'
