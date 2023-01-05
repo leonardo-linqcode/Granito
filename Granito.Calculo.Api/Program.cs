@@ -1,5 +1,5 @@
+
 using FluentValidation;
-using FluentValidation.AspNetCore;
 using Granito.Calculo.Api;
 using Granito.Calculo.Api.Application.Calculos.Commands;
 using Granito.Calculo.Api.Services.RequestProvider;
@@ -62,3 +62,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+namespace Granito.Calculo.Api
+{
+    public partial class Program { }
+}

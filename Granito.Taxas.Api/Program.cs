@@ -33,3 +33,8 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+namespace Granito.Taxas.Api
+{
+    public partial class Program { }
+}
