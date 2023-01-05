@@ -9,10 +9,10 @@ FROM mcr.microsoft.com/dotnet/sdk:7.0 AS build
 
 WORKDIR /src
 
-COPY ["Granito.Taxas.Api.csproj", "Granito.Taxas.Api/"]
-RUN dotnet restore "Granito.Taxas.Api/Granito.Taxas.Api.csproj"
+COPY ["Granito.Taxas.Api.csproj", "app/"]
+RUN dotnet restore "app/Granito.Taxas.Api.csproj"
+WORKDIR "/src/app"
 COPY . .
-WORKDIR "/src/Granito.Taxas.Api"
 RUN dotnet build "Granito.Taxas.Api.csproj" -c Release -o /app/build
 
 FROM build AS publish
