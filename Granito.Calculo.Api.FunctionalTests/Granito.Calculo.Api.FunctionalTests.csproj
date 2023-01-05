@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Granito.Calculo.Api\Granito.Calculo.Api.csproj" />
-    <ProjectReference Include="..\Granito.Taxas.Api\Granito.Taxas.Api.csproj" />
   </ItemGroup>
 
 </Project>
