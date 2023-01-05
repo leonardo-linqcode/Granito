@@ -46,7 +46,7 @@ Para rodar o projeto `Granito.Calculo.Api`, você vai precisar adicionar as segu
 
 ## Stack utilizada
 
-**Back-end:** .Net 7.0, c#, xUnit, FluentValidation, MediatR
+**Back-end:** .Net 7.0, c#, xUnit, FluentValidation, MediatR, Docker, CQRS Pattern
 ## Autores
 
 - [@leonardosilva](https://www.github.com/leonardo-linqcode)
