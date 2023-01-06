@@ -6,8 +6,8 @@ Projeto de avaliação técnica para vaga de Desenvolvedor Back-end na Granito.
 Projeto hospedado no Azure Cloud, serviços baseados em container docker.
 
 Imagens docker podem ser encontradas aqui:
-https://hub.docker.com/repository/docker/linqcode/granito.calculo.api
-https://hub.docker.com/repository/docker/linqcode/granito.taxas.api
+https://hub.docker.com/r/linqcode/granito.calculo.api
+https://hub.docker.com/r/linqcode/granito.taxas.api
 
 ````
 
